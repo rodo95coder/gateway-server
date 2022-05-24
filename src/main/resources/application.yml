@@ -1,58 +1,8 @@
 spring:
+  application:
+    name: gateway-server
   cloud:
-    gateway:
-      routes:
-      - id: service-customers
-        uri: lb://service-customers
-        predicates:
-        - Path=/**
-        filters:
-        - StripPrefix=0
-      - id: service-product-businesscredit
-        uri: lb://service-product-businesscredit
-        predicates:
-        - Path=/businessCredit/**
-        filters:
-        - StripPrefix=1
-      - id: service-product-currentaccount
-        uri: lb://service-product-currentaccount
-        predicates:
-        - Path=/currentAccount/**
-        filters:
-        - StripPrefix=1
-      - id: service-product-fixedtermaccount
-        uri: lb://service-product-fixedtermaccount
-        predicates:
-        - Path=/fixedTermAccount/**
-        filters:
-        - StripPrefix=1
-      - id: service-product-fixedtermaccount
-        uri: lb://service-product-fixedtermaccount
-        predicates:
-        - Path=/fixedTermAccount/**
-        filters:
-        - StripPrefix=1
-      - id: service-product-personalcredit
-        uri: lb://service-product-personalcredit
-        predicates:
-        - Path=/personalCredit/**
-        filters:
-        - StripPrefix=1
-      - id: service-product-savingaccount
-        uri: lb://service-product-savingaccount
-        predicates:
-        - Path=/savingAccount/**
-        filters:
-        - StripPrefix=1
-      - id: service-transaction-enterprise
-        uri: lb://service-transaction-enterprise
-        predicates:
-        - Path=/transactionEnterprise/**
-        filters:
-        - StripPrefix=1
-      - id: service-transaction-person
-        uri: lb://service-transaction-person
-        predicates:
-        - Path=/transactionPerson/**
-        filters:
-        - StripPrefix=1
+    config:
+      enabled: true
+      uri: http://localhost:8888
+
