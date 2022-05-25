@@ -26,12 +26,6 @@ spring:
         - Path=/fixedTermAccount/**
         filters:
         - StripPrefix=1
-      - id: service-product-fixedtermaccount
-        uri: lb://service-product-fixedtermaccount
-        predicates:
-        - Path=/fixedTermAccount/**
-        filters:
-        - StripPrefix=1
       - id: service-product-personalcredit
         uri: lb://service-product-personalcredit
         predicates:
